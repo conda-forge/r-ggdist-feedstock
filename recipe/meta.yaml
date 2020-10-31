@@ -27,7 +27,8 @@ requirements:
     - r-base
     - r-hdinterval
     - r-distributional
-    - r-dplyr >=0.8.0
+    - r-dplyr >=1.0.0
+    - r-fda
     - r-forcats
     - r-ggplot2 >=3.3.0
     - r-purrr >=0.2.3
@@ -35,12 +36,14 @@ requirements:
     - r-scales
     - r-tibble
     - r-tidyr >=1.0.0
+    - r-tidyselect
     - r-vctrs
   run:
     - r-base
     - r-hdinterval
     - r-distributional
-    - r-dplyr >=0.8.0
+    - r-dplyr >=1.0.0
+    - r-fda
     - r-forcats
     - r-ggplot2 >=3.3.0
     - r-purrr >=0.2.3
@@ -48,6 +51,7 @@ requirements:
     - r-scales
     - r-tibble
     - r-tidyr >=1.0.0
+    - r-tidyselect
     - r-vctrs
 
 test:
