@@ -1,4 +1,4 @@
-{% set version = "3.0.1" %}
+{% set version = "3.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggdist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggdist/ggdist_{{ version }}.tar.gz
-  sha256: caa918f4d4cfbb09415c951cf598cea50bae60a7a70507dc64697a206f1c0b3d
+  sha256: bd898f839a678fd75dea86a7920d593cf03651528ebd13a35bd90586763e32fd
 
 build:
   merge_build_host: true  # [win]
