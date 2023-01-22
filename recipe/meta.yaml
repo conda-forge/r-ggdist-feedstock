@@ -1,4 +1,4 @@
-{% set version = "3.2.0" %}
+{% set version = "3.2.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ggdist_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ggdist/ggdist_{{ version }}.tar.gz
-  sha256: 09c989d9ebb282d6eaae37f68a8c98abce61d9788527e691ed2ebe42da111e46
+  sha256: 76016ad99e049fdb5be5f93c431733a3c1911ac737930b4deda1648e0af3e228
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
@@ -23,36 +23,37 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-hdinterval
-    - r-distributional
+    - r-distributional >=0.3.0
     - r-dplyr >=1.0.0
-    - r-fda
-    - r-forcats
-    - r-ggplot2 >=3.3.0
-    - r-purrr >=0.2.3
+    - r-ggplot2 >=3.4.0
+    - r-glue
+    - r-numderiv
+    - r-quadprog
     - r-rlang >=0.3.0
     - r-scales
     - r-tibble
-    - r-tidyr >=1.0.0
     - r-tidyselect
     - r-vctrs
+    - r-withr
   run:
     - r-base
     - r-hdinterval
-    - r-distributional
+    - r-distributional >=0.3.0
     - r-dplyr >=1.0.0
-    - r-fda
-    - r-forcats
-    - r-ggplot2 >=3.3.0
-    - r-purrr >=0.2.3
+    - r-ggplot2 >=3.4.0
+    - r-glue
+    - r-numderiv
+    - r-quadprog
     - r-rlang >=0.3.0
     - r-scales
     - r-tibble
-    - r-tidyr >=1.0.0
     - r-tidyselect
     - r-vctrs
+    - r-withr
 
 test:
   commands:
