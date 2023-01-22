@@ -23,36 +23,37 @@ build:
 requirements:
   build:
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
     - r-hdinterval
-    - r-distributional
+    - r-distributional >=0.3.0
     - r-dplyr >=1.0.0
-    - r-fda
-    - r-forcats
-    - r-ggplot2 >=3.3.0
-    - r-purrr >=0.2.3
+    - r-ggplot2 >=3.4.0
+    - r-glue
+    - r-numderiv
+    - r-quadprog
     - r-rlang >=0.3.0
     - r-scales
     - r-tibble
-    - r-tidyr >=1.0.0
     - r-tidyselect
     - r-vctrs
+    - r-withr
   run:
     - r-base
     - r-hdinterval
-    - r-distributional
+    - r-distributional >=0.3.0
     - r-dplyr >=1.0.0
-    - r-fda
-    - r-forcats
-    - r-ggplot2 >=3.3.0
-    - r-purrr >=0.2.3
+    - r-ggplot2 >=3.4.0
+    - r-glue
+    - r-numderiv
+    - r-quadprog
     - r-rlang >=0.3.0
     - r-scales
     - r-tibble
-    - r-tidyr >=1.0.0
     - r-tidyselect
     - r-vctrs
+    - r-withr
 
 test:
   commands:
