@@ -21,6 +21,19 @@ build:
 
 requirements:
   build:
+    - cross-r-base {{ r_base }}  # [build_platform != target_platform]
+    - r-rlang                    # [build_platform != target_platform]
+    - r-glue                     # [build_platform != target_platform]
+    - r-numderiv                 # [build_platform != target_platform]
+    - r-scales                   # [build_platform != target_platform]
+    - r-tibble                   # [build_platform != target_platform]
+    - r-withr                    # [build_platform != target_platform]
+    - r-cli                      # [build_platform != target_platform]
+    - r-ggplot2                  # [build_platform != target_platform]
+    - r-rcpp                     # [build_platform != target_platform]
+    - r-vctrs                    # [build_platform != target_platform]
+    - r-quadprog                 # [build_platform != target_platform]
+    - r-distributional           # [build_platform != target_platform]
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ stdlib("c") }}            # [not win]
